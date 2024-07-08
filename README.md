@@ -36,8 +36,9 @@ Connect is a real-time chat application designed to facilitate seamless communic
 
 ![SignUp Page](https://github.com/Suresh-75/Connect-ChatApp-/assets/115783357/433c5500-dbe5-45c6-b6e9-acc4b267b9ab)
 ![Main Page Dark Mode](https://github.com/Suresh-75/Connect-ChatApp-/assets/115783357/00796317-f6df-4e15-bc29-512ec1cfd368)
-![Main Page Light Mode](https://github.com/Suresh-75/Connect-ChatApp-/assets/115783357/a7a334a6-a204-44d8-acc2-d6e9d8e45485)
+![Main Page Light Mode](https://github.com/Suresh-75/Connect-ChatApp-/assets/115783357/0d6da616-163a-49e1-92c6-4ab83442fd7a)
 ![Settings Page](https://github.com/Suresh-75/Connect-ChatApp-/assets/115783357/653c9cc4-6635-41ae-a6f7-f303d357f556)
+
 
 
 ## Technologies Used
