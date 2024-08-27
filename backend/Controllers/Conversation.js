@@ -28,19 +28,6 @@ exports.handleGetConvos = async (req, res) => {
     const userConvos = await UserConv.find({
       members: { $in: [userID] },
     });
-    // let final = [];
-
-    // for (let i = 0; i < userConvos.length; i++) {
-    //   let conv = userConvos[i];
-    //   const msg = await Message.find({ conversationID: conv._id });
-    //   if (msg.length > 0) {
-    //     // console.log(msg.length);
-    //     console.log(conv);
-    //     final.push(conv);
-    //   }
-    // }
-
-    // console.log(final);
     res.json({
       status: "success",
       msg: userConvos,
