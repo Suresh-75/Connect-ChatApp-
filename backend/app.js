@@ -35,11 +35,11 @@ const upload = multer({ storage: storage });
 
 app.use(
   cors()
-  //   {
-  //   origin: [`${import.meta.env.FRONTEND_URL}`],
-  //   methods: ["POST", "GET", "DELETE", "PUT"],
-  //   credentials: true,
-  // }
+    {
+    origin: [`${process.env.FRONTEND_URL}`,],
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+  }
 );
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
