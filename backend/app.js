@@ -35,7 +35,7 @@ const upload = multer({ storage: storage });
 
 app.use(
   cors({
-    origin: [`${import.meta.env.FRONTEND_URL}`],
+    origin: [`${process.env.FRONTEND_URL}`],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   })
