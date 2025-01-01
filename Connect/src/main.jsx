@@ -8,7 +8,7 @@ import "@radix-ui/themes/styles.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Theme } from "@radix-ui/themes";
 import SettingsPage from "./SettingsPage.jsx";
-
+import { config } from "dotenv";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Theme accentColor="indigo">
