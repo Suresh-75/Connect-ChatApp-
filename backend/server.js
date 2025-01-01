@@ -21,8 +21,6 @@ const io = new Server(server, {
 
 let usersConnected = [];
 function getSocketID(recieverID) {
-  // console.log(usersConnected);
-  // console.log(recieverID);
   const userI = usersConnected.find((user) => {
     return user.userID == recieverID;
   });

@@ -1,4 +1,8 @@
 // import express from "express";
+
+// NOTE
+// use cors configs in vercel app and not in local server
+
 const express = require("express");
 const cors = require("cors");
 const {
