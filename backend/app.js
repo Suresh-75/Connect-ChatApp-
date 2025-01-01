@@ -33,9 +33,21 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-app.use(cors());
+app.use(
+  cors()
+  //   {
+  //   origin: [`${import.meta.env.FRONTEND_URL}`],
+  //   methods: ["POST", "GET", "DELETE", "PUT"],
+  //   credentials: true,
+  // }
+);
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.get("/", (req, res) => {
+  res.json({
+    status: "Success",
+  });
+});
 app.get("/app", isAuthenticated, handleApp);
 app.post("/login", handleLogin);
 app.post("/signUp", handleSignUp);

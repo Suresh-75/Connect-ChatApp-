@@ -63,7 +63,7 @@ function ChatSection({
         setAllMsg([]);
         setIsLoading(true);
         const msgdata = await axios.get(
-          `http://localhost:8000/app/getMsg/${conversationID}`,
+          `${import.meta.env.VITE_BASE_URL}/app/getMsg/${conversationID}`,
           {
             headers: {
               token: localStorage.getItem("jwToken"),

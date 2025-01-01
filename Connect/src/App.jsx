@@ -26,9 +26,12 @@ function App() {
   useEffect(function () {
     (async () => {
       const userID = localStorage.getItem("userID");
-      const res = await axios.get(`http://localhost:8000/app/users/${userID}`, {
-        headers: { token: localStorage.getItem("jwToken") },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/app/users/${userID}`,
+        {
+          headers: { token: localStorage.getItem("jwToken") },
+        }
+      );
       setAva(res.data.avatarUrl);
       setUserName(res.data.userData.name);
     })();
@@ -41,13 +44,16 @@ function App() {
         // console.log(selectedFriend);
         const frndID = selectedFriend._id;
 
-        const data = await axios.get("http://localhost:8000/app/getConvoID/", {
-          headers: {
-            token: localStorage.getItem("jwToken"),
-            userID,
-            frndID,
-          },
-        });
+        const data = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/app/getConvoID/`,
+          {
+            headers: {
+              token: localStorage.getItem("jwToken"),
+              userID,
+              frndID,
+            },
+          }
+        );
         // console.log("conversationID:", data.data);
         setConversationID(data.data.msg[0]?._id);
         setText("");

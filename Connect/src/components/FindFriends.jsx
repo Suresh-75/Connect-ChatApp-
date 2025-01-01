@@ -24,7 +24,7 @@ function FindFriends({
     (async () => {
       const userID = localStorage.getItem("userID");
       const res = await axios.get(
-        `http://localhost:8000/app/getConv/${userID}`,
+        `${import.meta.env.VITE_BASE_URL}/app/getConv/${userID}`,
         {
           headers: {
             token: localStorage.getItem("jwToken"),

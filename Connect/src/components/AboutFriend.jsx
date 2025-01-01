@@ -10,7 +10,7 @@ function AboutFriend({ selectedFriend }) {
   useEffect(function () {
     (async () => {
       const res = await axios.get(
-        `http://localhost:8000/app/users/${selectedFriend._id}`,
+        `${import.meta.env.VITE_BASE_URL}/app/users/${selectedFriend._id}`,
         {
           headers: { token: localStorage.getItem("jwToken") },
         }

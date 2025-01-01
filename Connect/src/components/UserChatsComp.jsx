@@ -17,26 +17,32 @@ function UserChatsComp({
   const [isLoading, setIsloading] = useState(false);
   const isOnline = OnlineUsers.indexOf(user[0]) >= 0 ? true : false;
   const avatarUrl = userData.Avatar
-    ? `http://localhost:8000/${userData.Avatar}`
+    ? `${import.meta.env.VITE_BASE_URL}/${userData.Avatar}`
     : null;
   useEffect(function () {
     (async () => {
       setIsloading(true);
-      const res = await axios.get(`http://localhost:8000/app/users/${user}`, {
-        headers: {
-          token: localStorage.getItem("jwToken"),
-        },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/app/users/${user}`,
+        {
+          headers: {
+            token: localStorage.getItem("jwToken"),
+          },
+        }
+      );
       const data = res.data.userData;
       const frndID = data._id;
       const userID = localStorage.getItem("userID");
-      const convoid = await axios.get("http://localhost:8000/app/getConvoID/", {
-        headers: {
-          token: localStorage.getItem("jwToken"),
-          userID,
-          frndID,
-        },
-      });
+      const convoid = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/app/getConvoID/`,
+        {
+          headers: {
+            token: localStorage.getItem("jwToken"),
+            userID,
+            frndID,
+          },
+        }
+      );
       setConID(convoid.data.msg[0]._id);
       setUserData(data);
       setIsloading(false);
@@ -60,7 +66,7 @@ function UserChatsComp({
     const controller = new AbortController();
     (async () => {
       const lastChat = await axios.get(
-        `http://localhost:8000/app/getMsg/${conID}`,
+        `${import.meta.env.VITE_BASE_URL}/app/getMsg/${conID}`,
 
         {
           headers: {

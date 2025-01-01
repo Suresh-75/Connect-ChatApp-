@@ -10,7 +10,7 @@ function FriendCard({
   setQuery,
 }) {
   const avatarUrl = friend.Avatar
-    ? `http://localhost:8000/${friend.Avatar}`
+    ? `${import.meta.env.VITE_BASE_URL}/${friend.Avatar}`
     : null;
   return (
     <div

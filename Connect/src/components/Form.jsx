@@ -14,7 +14,7 @@ function Form({ setErr }) {
       let name = firstName + " " + lastName;
       // console.log(name);
       if (password != cPassword) throw new Error("Passwords do not match");
-      const res = await axios.post("http://localhost:8000/signUp", {
+      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/signUp`, {
         email,
         password,
         name,

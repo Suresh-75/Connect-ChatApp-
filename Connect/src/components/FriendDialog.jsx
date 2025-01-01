@@ -18,7 +18,7 @@ function FriendDialog({
       // console.log(recieverID, " ", senderID);
       //Check if the recieverID is already there in the userConvo arr;
       const res = await axios.post(
-        `http://localhost:8000/app/createConvo`,
+        `${import.meta.env.VITE_BASE_URL}/app/createConvo`,
         {
           senderID,
           recieverID,

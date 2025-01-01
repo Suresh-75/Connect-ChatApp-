@@ -2,7 +2,7 @@ import { Avatar, IconButton, Tooltip } from "@radix-ui/themes";
 
 function ChatNav({ selectedFriend, setIsAbout, isTyping }) {
   const avatarUrl = selectedFriend.Avatar
-    ? `http://localhost:8000/${selectedFriend.Avatar}`
+    ? `${import.meta.env.VITE_BASE_URL}/${selectedFriend.Avatar}`
     : null;
   return (
     <div className="h-14 my-4 mx-4 bg-violet-50 rounded-3xl flex items-center justify-between px-3 dark:bg-zinc-950">

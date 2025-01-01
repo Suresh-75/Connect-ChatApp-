@@ -41,7 +41,7 @@ function SettingsPage() {
     }
 
     const res = await axios.post(
-      `http://localhost:8000/app/UpdateProfile/${userID}`,
+      `${import.meta.env.VITE_BASE_URL}/app/UpdateProfile/${userID}`,
       obj,
       {
         headers: {
@@ -62,11 +62,14 @@ function SettingsPage() {
   useEffect(function () {
     (async () => {
       const userID = localStorage.getItem("userID");
-      const res = await axios.get(`http://localhost:8000/app/users/${userID}`, {
-        headers: {
-          token: localStorage.getItem("jwToken"),
-        },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/app/users/${userID}`,
+        {
+          headers: {
+            token: localStorage.getItem("jwToken"),
+          },
+        }
+      );
       // console.log(res.data.userData);
       setAvatar(res.data.avatarUrl);
       setPreview(res.data.avatarUrl);

@@ -10,7 +10,7 @@ function Form({ setErr }) {
   async function handleLogin(e) {
     try {
       e.preventDefault();
-      const res = await axios.post("http://localhost:8000/login", {
+      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/login`, {
         email,
         password,
       });

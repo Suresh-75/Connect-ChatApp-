@@ -18,7 +18,7 @@ function ChatBox({
       setText(text);
       const senderID = localStorage.getItem("userID");
       const res = await axios.post(
-        "http://localhost:8000/app/createMsg",
+        `${import.meta.env.VITE_BASE_URL}/app/createMsg`,
         {
           text,
           senderID,
@@ -31,7 +31,7 @@ function ChatBox({
         }
       );
       const msgdata = await axios.get(
-        `http://localhost:8000/app/getMsg/${conversationID}`,
+        `${import.meta.env.VITE_BASE_URL}/app/getMsg/${conversationID}`,
         {
           headers: {
             token: localStorage.getItem("jwToken"),

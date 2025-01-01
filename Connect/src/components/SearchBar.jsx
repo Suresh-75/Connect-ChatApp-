@@ -17,7 +17,7 @@ function SearchBar({ SetFriends, setNotFound, setQuery, query }) {
         try {
           setNotFound(false);
           const res = await axios.get(
-            `http://localhost:8000/users/${query.trim()}`,
+            `${import.meta.env.VITE_BASE_URL}/users/${query.trim()}`,
             {
               headers: {
                 token: localStorage.getItem("jwToken"),

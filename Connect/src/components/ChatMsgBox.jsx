@@ -10,7 +10,7 @@ function ChatMsgBox({ msg, selectedFriend, pp }) {
     mins = "0" + mins;
   }
   const avatarUrl = selectedFriend.Avatar
-    ? `http://localhost:8000/${selectedFriend.Avatar}`
+    ? `${import.meta.env.VITE_BASE_URL}/${selectedFriend.Avatar}`
     : null;
   return (
     <div
